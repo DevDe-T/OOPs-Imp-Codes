@@ -17,12 +17,12 @@ public:
 	}
 
 	int bubble_sort(){
-		int c = 0;
+		int swaps = 0;
 		for(int i=0;i<n-1;i++){
 			int f = 0;
 			for(int j=0;j<n-i-1;j++){
 				if(arr[j] > arr[j+1]){
-					c++;
+					swaps++;
 					f=1;
 					swap(arr[j], arr[j+1]);
 				}
@@ -34,12 +34,12 @@ public:
 		return c;
 	}
 	int selection_sort(){
-		int c = 0;
+		int swaps = 0;
 		for(int i=0;i<n;i++){
 			int min_idx = i;
 			for(int j=i+1;j<n;j++){
 				if(arr[min_idx] > arr[j]){
-					c++;
+					swaps++;
 					min_idx = j;
 				}
 			}
@@ -49,12 +49,12 @@ public:
 	}
 	int insertion_sort(){
 
-		int c = 0;
+		int swaps = 0;
 		for(int i=1;i<n;i++){
 			int j = i-1;
 			int key = arr[i];
 			while(j>=0 && arr[j]>key){
-				c++;
+				swaps++;
 				arr[j+1] = arr[j];
 				j--;
 			}
